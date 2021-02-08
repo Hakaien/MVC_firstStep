@@ -7,6 +7,7 @@ try {
         liste_stagiaires();
     } else if (isset($_GET["action"])) {
         if ($_GET["action"] == "suppr") {
+
             if (isset($_GET["id"])) {
                 supprimer_stagiaire($_GET["id"]);
             } else {
@@ -14,17 +15,13 @@ try {
             }
         } else if ($_GET["action"] == "addChamp") {
             afficher_add_stagiaire();
-        } else if ($_GET["action"] == "addSuccess") {
-            ajouter_stagiaire();
-            header("location:index.php");
-        }else if ($_GET["action"] == "update") {
-            if (isset($_GET["id"])) {
-                afficher_up_to_stagiaire($_GET["id"]);
+            
+        } else 
+            if ($_GET["action"] == "addSuccess") {
+                ajouter_stagiaire();
+                liste_stagiaires();
             }
-        } else if ($_GET["action"] == "updateSuccess") {
-            up_to_stagiaire();
-            header("location:index.php");
-        }
+        
     } else {
         throw new Exception("<h1>Page non trouvée !!!</h1>");
     }

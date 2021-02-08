@@ -21,11 +21,6 @@ function ajouter_stagiaire(){
     add_stagiaire();
 }
 
-function afficher_up_to_stagiaire(){
-    $data = connect_db_update();
-    require "templates/updateStagiaires.php";
-}
-
 function up_to_stagiaire() {
     update_stagiaire();
 }
@@ -35,3 +30,4 @@ function up_to_stagiaire() {
 function erreur($msgErreur) {
     require 'templates/erreur.php';
 }
+?>

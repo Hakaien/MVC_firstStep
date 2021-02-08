@@ -13,7 +13,7 @@ ob_start();
     <?php
     foreach ($stagiaires as $stagiaire) {
         echo "<tr>";
-        echo "<td class='colid'><a href=index.php?action=update&id=$stagiaire[id_membre]> $stagiaire[id_membre] </a></td>";
+        echo "<td class='colid'> $stagiaire[id_membre] </td>";
         echo "<td> $stagiaire[login_membre] </td>";
         echo "<td> $stagiaire[nom_membre] </td>";
         echo "<td class='colsuppr'><a href=index.php?action=suppr&id=$stagiaire[id_membre]>Supprimer</a></td>";

@@ -59,22 +59,11 @@ function add_stagiaire()
     $reponse->execute();
 }
 
-function connect_db_update()
-{
-    $connexion = connect_db();
-    $sql = "select * from membres where id_membre = :code ";
-    $reponse = $connexion->prepare($sql);
-    $reponse->execute(array(":code" => $_GET["id"]));
-    $data = $reponse->fetch();
-    return $data;
-}
-
 function update_stagiaire()
 {
     $connexion = connect_db();
     $sql = "update membres set nom_membre=:nom_membre, login_membre=:login_membre where id_membre=:code";
     $reponse = $connexion->prepare($sql);
-
     $code    = $_POST["code"];
     $nom_membre   = $_POST["nom_membre"];
     $login_membre = $_POST["login_membre"];
@@ -88,5 +77,6 @@ function update_stagiaire()
     $reponse->bindValue(":code", $code, PDO::PARAM_STR);
     $reponse->bindValue(":nom_membre", $nom_membre, PDO::PARAM_STR);
     $reponse->bindValue(":login_membre", $login_membre, PDO::PARAM_STR);
-    $reponse->execute();
+    $reponse->execute();        
+
 }
