@@ -14,21 +14,21 @@ ob_start();
             </tr>
 
             <tr>
-                <td><label for="">Login</label></td>
-                <td><input type="text" name="" id="" autocomplete="off" value=""></td>
-                <td><span name="" id=""></span></td>
+                <td><label for="loginConnect">Login</label></td>
+                <td><input type="text" name="loginConnect" id="login_connect" autocomplete="off" value=""></td>
+                <td><span name="loginConnect" id=""></span></td>
             </tr>
 
             <tr>
-                <td><label for="">Email</label></td>
-                <td><input type="text" name="" id="" autocomplete="off" value=""></td>
-                <td><span name="" id=""></span></td>
+                <td><label for="emailConnect">Email</label></td>
+                <td><input type="email" name="emailConnect" id="email_connect" autocomplete="off" value=""></td>
+                <td><span name="emailConnect" id=""></span></td>
             </tr>
 
             <tr>
-                <td><label for="">Password</label></td>
-                <td><input type="text" name="" id="" autocomplete="off" value=""></td>
-                <td><span name="" id=""></span></td>
+                <td><label for="pwdConnect">Password</label></td>
+                <td><input type="password" name="pwdConnect" id="pwd_connect" autocomplete="off" value=""></td>
+                <td><span name="pwdConnect" id=""></span></td>
             </tr>
 
             <tr>
