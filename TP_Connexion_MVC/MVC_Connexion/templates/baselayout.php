@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<?php 
+require "header.php"
+?>
     <?=$content ?>
     <!-- < ?=$content == < ?php echo$content -->
 </body>

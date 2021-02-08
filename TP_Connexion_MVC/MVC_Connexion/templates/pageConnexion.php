@@ -5,12 +5,12 @@ ob_start();
 <div id="corpusConnexion">
     <h1>CONNEXION MVC</h1>
 
-    <form action="" method="POST">
+    <form action="index.php?action=connexionSuccess" method="POST">
         <table class="montableau" id="connexionTableau">
             <tr>
                 <th></th>
                 <th></th>
-                <th><a href="">Créer un compte</a></th>
+                <th><a href="index.php?action=addChamp">Créer un compte</a></th>
             </tr>
 
             <tr>

@@ -15,22 +15,22 @@ function connect_db()
     return $connexion;
 }
 
-// Création de la liste des Stagiaires
-function get_all_stagiaires()
+// Création de la liste des membres
+function get_all_members()
 {
 
     $connexion = connect_db();
-    $stagiaires = array();
+    $members = array();
     $sql = "SELECT * from utilisateurs";
 
     foreach ($connexion->query($sql) as $row) {
-        $stagiaires[] = $row;
+        $members[] = $row;
     }
-    return $stagiaires;
+    return $members;
 }
 
-// Suppression d'un stagiaire par id
-function delete_stagiaire_by_id($id)
+// Suppression d'un membre par id
+function delete_member_by_id($id)
 {
 
     $connexion = connect_db();
@@ -44,56 +44,26 @@ function delete_stagiaire_by_id($id)
     $reponse2->execute();
 }
 
-//Ajouter un stagiaire
+//Ajouter un membre
 
-function add_stagiaire()
+function add_member()
 {
 
     $connexion = connect_db();
-    $sql = "insert into membres values (:id_membre, :nom_membre, :login_membre)";
+    $sql = "insert into utilisateurs values (:id_user, :email_user, :login_user, :pwd_user, :fonction)";
     $reponse = $connexion->prepare($sql);
 
-    $id_membre     = $_POST["id_membre"];
-    $nom_membre    = $_POST["nom_membre"];
-    $login_membre  = $_POST["login_membre"];
+    $id_user        = $_POST["id_user"];
+    $email_user     = $_POST["email_user"];
+    $login_user     = $_POST["login_user"];
+    $pwd_user       = $_POST["pwd_user"];
+    $fonction_user  = $_POST["fonction"];
 
-    $reponse->bindValue(":id_membre", $id_membre, PDO::PARAM_INT);
-    $reponse->bindValue(":nom_membre", $nom_membre, PDO::PARAM_STR);
-    $reponse->bindValue(":login_membre", $login_membre, PDO::PARAM_STR);
-    $reponse->execute();
-}
-
-//connexion BDD spéciale pour afficher les valeurs updates
-function connect_db_update()
-{
-    $connexion = connect_db();
-    $sql = "select * from membres where id_membre = :code ";
-    $reponse = $connexion->prepare($sql);
-    $reponse->execute(array(":code" => $_GET["id"]));
-    $data = $reponse->fetch();
-    return $data;
-}
-
-//Upddate les valeurs d'un stagiaire
-function update_stagiaire()
-{
-    $connexion = connect_db();
-    $sql = "update membres set nom_membre=:nom_membre, login_membre=:login_membre where id_membre=:code";
-    $reponse = $connexion->prepare($sql);
-
-    $code    = $_POST["code"];
-    $nom_membre   = $_POST["nom_membre"];
-    $login_membre = $_POST["login_membre"];
-
-    // Exécution de la requête préparée de modification sans contrôle de validation
-    // $reponse->execute( array(   ":designation"=>$designation, 
-    //                             ":prix"=>$prix,
-    //                             ":categorie"=>$categorie,
-    //                             ":code"=>$code));
-
-    $reponse->bindValue(":code", $code, PDO::PARAM_STR);
-    $reponse->bindValue(":nom_membre", $nom_membre, PDO::PARAM_STR);
-    $reponse->bindValue(":login_membre", $login_membre, PDO::PARAM_STR);
+    $reponse->bindValue(":id_user", $id_user, PDO::PARAM_INT);
+    $reponse->bindValue(":email_user", $email_user, PDO::PARAM_STR);
+    $reponse->bindValue(":login_user", $login_user, PDO::PARAM_STR);
+    $reponse->bindValue(":pwd_user", $pwd_user, PDO::PARAM_STR);
+    $reponse->bindValue(":fonction", $fonction_user, PDO::PARAM_STR);
     $reponse->execute();
 }
 
@@ -106,4 +76,36 @@ function afficher_last_ID()
     $reponse->execute(array($sql2));
     $lastID = $reponse->fetch();
     return $lastID;
+}
+
+//connexion BDD spéciale pour afficher les valeurs updates
+function connect_db_update()
+{
+    $connexion = connect_db();
+    $sql = "select * from utilisateurs where id_user=:code ";
+    $reponse = $connexion->prepare($sql);
+    $reponse->execute(array(":code" => $_GET["id"]));
+    $data = $reponse->fetch();
+    return $data;
+}
+
+//Upddate les valeurs d'un stagiaire
+function update_member()
+{
+    $connexion = connect_db();
+    $sql = "update utilisateurs set email_user=:email_user, login_user=:login_user, pwd_user=:pwd_user, fonction=:fonction where id_user=:code ";
+    $reponse = $connexion->prepare($sql);
+
+    $code       = $_POST["code"];
+    $email_user = $_POST["email_user"];
+    $login_user = $_POST["login_user"];
+    $pwd_user   = $_POST["pwd_user"];
+    $fonction   = $_POST["fonction"];
+
+    $reponse->bindValue(":code", $code, PDO::PARAM_INT);
+    $reponse->bindValue(":email_user", $email_user, PDO::PARAM_STR);
+    $reponse->bindValue(":login_user", $login_user, PDO::PARAM_STR);
+    $reponse->bindValue(":pwd_user", $pwd_user, PDO::PARAM_STR);
+    $reponse->bindValue(":fonction", $fonction, PDO::PARAM_STR);
+    $reponse->execute();
 }

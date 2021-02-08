@@ -34,10 +34,6 @@ h1 {
     margin: auto;
 }
 
-label {
-    width: 100px;
-}
-
 #monid {
     width: 100px;
     margin: auto;
@@ -48,10 +44,12 @@ label {
 
 .montableau {
     border: 1px solid black;
-    width: 600px;
+    width: 700px;
     margin: auto;
     background: rgb(73, 71, 71);
     color: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
 }
 
 th {
@@ -64,6 +62,8 @@ th {
 td {
     border-top: 1px solid black;
     border-right: 1px solid black;
+    width: 33%;
+    padding: .4rem;
 }
 
 .colid {
@@ -81,9 +81,27 @@ td {
     background-color: rgba(49, 49, 49, 0.993);
 }
 
+/* ADD HEADER */
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head img {
+    height: 200px;
+}
+
+.head {
+    padding: 1rem;
+}
+
 /* Specifique page de connexion */
 #corpusConnexion {
     align-self: center;
+    width: 100%;
     margin: auto;
 }
 
@@ -102,9 +120,20 @@ td {
     height: 50px;
 }
 
-#connexionTableau button{
-    background:rgba(10, 184, 161, 0.993);
-    border: 1px solid black;
-    box-shadow: 3px 3px 10px white;
+#connexionTableau a {
+    color: black;
+    text-decoration: underline;
 }
 
+.montableau button{
+    background:rgba(10, 184, 161, 0.993);
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.montableau button:hover {
+    color: white;
+    background: black;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px white;
+}
