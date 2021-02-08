@@ -14,7 +14,7 @@ ob_start();
             </tr>
 
             <tr>
-                <td><label for="">User</label></td>
+                <td><label for="">Login</label></td>
                 <td><input type="text" name="" id="" autocomplete="off" value=""></td>
                 <td><span name="" id=""></span></td>
             </tr>
@@ -32,7 +32,7 @@ ob_start();
             </tr>
 
             <tr>
-                <td></td>
+                <td><button type="button" id=submitTest>test</button> </td>
                 <td>
                     <button type="reset" name="resetADD">Annuler</button>
                     <button type="submit" name="submitADD">Envoyer</button>

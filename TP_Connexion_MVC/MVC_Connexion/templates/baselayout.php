@@ -14,5 +14,8 @@ require "header.php"
 ?>
     <?=$content ?>
     <!-- < ?=$content == < ?php echo$content -->
+
 </body>
+<script src="js/JQuery-3.5.1.js"></script>
+<script src="js/scriptconnexion.js"></script>
 </html>

@@ -105,7 +105,7 @@ header {
     margin: auto;
 }
 
-#corpusConnexion h1 {
+h1 {
     color: rgba(10, 184, 161, 0.993)
 }
 
@@ -131,7 +131,7 @@ header {
     border-radius: 6px;
 }
 
-.montableau button:hover {
+.montableau button:hover{
     color: white;
     background: black;
     cursor: pointer;

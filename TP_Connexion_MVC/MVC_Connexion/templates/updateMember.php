@@ -48,9 +48,10 @@ ob_start();
             </td>
             <td></td>
         </tr>
+
     </table>
 </form>
-<a href="index.php">Retour</a>
+<a href="index.php">Retour à l'accueil</a>
 
 <?php
 $content = ob_get_clean();

@@ -2,7 +2,7 @@
 $title = "Liste des Stagiaires";
 ob_start();
 ?>
-<h1><a href="index.php">Liste des Membre</a></h1>
+<h1>Liste des Membre</h1>
 <table class="montableau">
     <tr>
         <th> ID Member </th>
