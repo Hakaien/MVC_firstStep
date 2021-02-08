@@ -21,7 +21,7 @@ function get_all_stagiaires()
 
     $connexion = connect_db();
     $stagiaires = array();
-    $sql = "SELECT * from Membres";
+    $sql = "SELECT * from utilisateurs";
 
     foreach ($connexion->query($sql) as $row) {
         $stagiaires[] = $row;
@@ -34,11 +34,11 @@ function delete_stagiaire_by_id($id)
 {
 
     $connexion = connect_db();
-    $sql = "DELETE FROM membres WHERE id_membre = :id ";
+    $sql = "DELETE FROM utilisateurs WHERE id_user = :id ";
     $reponse = $connexion->prepare($sql);
     $reponse->bindValue(":id", intval($_GET["id"]), PDO::PARAM_INT);
     $reponse->execute();
-    $sql2 = "ALTER TABLE membres AUTO_INCREMENT = :id";
+    $sql2 = "ALTER TABLE utilisateurs AUTO_INCREMENT = :id";
     $reponse2 = $connexion->prepare($sql2);
     $reponse2->bindValue(":id", intval($_GET["id"]), PDO::PARAM_INT);
     $reponse2->execute();
@@ -101,7 +101,7 @@ function update_stagiaire()
 function afficher_last_ID()
 {
     $connexion = connect_db();
-    $sql2 = "SELECT MAX(id_membre)+1 from membres";
+    $sql2 = "SELECT MAX(id_user)+1 from utilisateurs";
     $reponse = $connexion->prepare($sql2);
     $reponse->execute(array($sql2));
     $lastID = $reponse->fetch();

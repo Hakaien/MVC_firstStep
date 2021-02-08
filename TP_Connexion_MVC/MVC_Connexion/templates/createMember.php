@@ -25,6 +25,10 @@ ob_start();
             <td><input type="text" name="login_membre" id="login_membre" autocomplete="off"></td>
         </tr>
 
+        <tr>
+            <td><label for="login_membre">Login membre :</label></td>
+            <td><input type="text" name="login_membre" id="login_membre" autocomplete="off"></td>
+        </tr>
 
         <tr>
             <td><button type="reset" name="resetADD">Annuler</button></td>

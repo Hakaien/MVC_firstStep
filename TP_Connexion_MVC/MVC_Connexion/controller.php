@@ -1,21 +1,25 @@
 <?php
 require_once 'modele.php';
 
+function connexion_form(){
+    require "templates/pageConnexion.php";
+}
+
 function liste_stagiaires(){
     $stagiaires = get_all_stagiaires();
-    require "templates/listestagiaires.php";
+    require "templates/listeMembers.php";
 }
 
 function supprimer_stagiaire($id){
 
     delete_stagiaire_by_id($id);
     $stagiaires = get_all_stagiaires();
-    require "templates/listestagiaires.php";
+    require "templates/listeMembers.php";
 }
 
 function afficher_add_stagiaire(){
     $lastID = afficher_last_ID();
-    require "templates/createStagiaires.php";
+    require "templates/createMember.php";
 }
 
 function ajouter_stagiaire(){
@@ -24,7 +28,7 @@ function ajouter_stagiaire(){
 
 function afficher_up_to_stagiaire(){
     $data = connect_db_update();
-    require "templates/updateStagiaires.php";
+    require "templates/updateMember.php";
 }
 
 function up_to_stagiaire() {

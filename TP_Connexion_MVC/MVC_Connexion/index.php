@@ -3,8 +3,8 @@ require_once 'controller.php';
 
 try {
     if (!isset($_GET["action"])) {
-
-        liste_stagiaires();
+        connexion_form();
+        
     } else if (isset($_GET["action"])) {
         if ($_GET["action"] == "suppr") {
             if (isset($_GET["id"])) {

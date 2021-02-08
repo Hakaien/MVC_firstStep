@@ -1,6 +1,8 @@
 body {
     width: 90%;
     margin: auto;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
 }
 
 h1 {
@@ -48,10 +50,12 @@ label {
     border: 1px solid black;
     width: 600px;
     margin: auto;
+    background: rgb(73, 71, 71);
+    color: white;
 }
 
 th {
-    background-color: rgba(59, 184, 10, 0.993);
+    background-color: rgba(10, 184, 161, 0.993);
     border-right: 1px solid rgb(29, 28, 28);
     color: white;
     text-align: center;
@@ -76,3 +80,31 @@ td {
     text-align: center;
     background-color: rgba(49, 49, 49, 0.993);
 }
+
+/* Specifique page de connexion */
+#corpusConnexion {
+    align-self: center;
+    margin: auto;
+}
+
+#corpusConnexion h1 {
+    color: rgba(10, 184, 161, 0.993)
+}
+
+#connexionTableau td {
+    padding: 1rem;
+    border: none
+}
+
+#connexionTableau th {
+    border: none;
+    border-bottom: 1px solid black;
+    height: 50px;
+}
+
+#connexionTableau button{
+    background:rgba(10, 184, 161, 0.993);
+    border: 1px solid black;
+    box-shadow: 3px 3px 10px white;
+}
+
