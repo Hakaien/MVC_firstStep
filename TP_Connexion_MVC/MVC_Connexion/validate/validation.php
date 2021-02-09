@@ -12,31 +12,26 @@ $dataErrors=array();
 //validation du téléphone
 $telephone=filter_var($telephone,getSanitizeFilter("string"));
 
-//validation de l’adresse email
-if( filter_var($email, getValidateFilter("email") )===false){
-    $dataErrors["email"]="Erreur: l'adresse mail est invalide.";
-}
-
 //validation de la catégorie
 $categorie=filter_var($categorie,getSanitizeFilter("string"));
 
-//préparation validation du formulaire.
+// validation ID ?
+if (filter_var($id_user, getValidateFilter("int") )===false){
+    $dataErrors["int"]="Erreur: ID incorrect";
+}
 
-//validation Text
-//validation Raison_Sociale
+// validation login
+$login_user=filter_var($login_user,getSanitizeFilter("string"));
 
-//Validation Adresse
-//Validation Ville
-//Validation Commentaires_Comm
+// validation pwd 
+$pwd_user=filter_var($pwd_user,getSanitizeFilter("string"));
 
-//Validation Numéraire
-//Validation Ca
-//Validation Effectif
-//Validation Code_Postal
+// validation email
+if (filter_var($email_user, getValidateFilter("email") )===false){
+    $dataErrors["email"]="Erreur: l'adresse mail est invalide.";
+}
 
-//Validation Menu Déroulant
-//Validation Type_Client
-//Validation Activité
-//Validation Nature
+// validation fonction
+$fonction=filter_var($fonction,getSanitizeFilter("string"));
 
 ?>

@@ -15,19 +15,19 @@ ob_start();
 
             <tr>
                 <td><label for="loginConnect">Login</label></td>
-                <td><input type="text" name="loginConnect" id="login_connect" autocomplete="off" value=""></td>
+                <td><input type="text" class="connectForm" name="loginConnect" id="login_connect" autocomplete="off" value="" pattern="^[A-Za-zÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ]{3,30}"></td>
                 <td><span name="loginConnect" id=""></span></td>
             </tr>
 
             <tr>
                 <td><label for="emailConnect">Email</label></td>
-                <td><input type="email" name="emailConnect" id="email_connect" autocomplete="off" value=""></td>
+                <td><input type="email" class="connectForm" name="emailConnect" id="email_connect" autocomplete="off" value="" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"></td>
                 <td><span name="emailConnect" id=""></span></td>
             </tr>
 
             <tr>
                 <td><label for="pwdConnect">Password</label></td>
-                <td><input type="password" name="pwdConnect" id="pwd_connect" autocomplete="off" value=""></td>
+                <td><input type="password" class="connectForm" name="pwdConnect" id="pwd_connect" autocomplete="off" value="" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}"></td>
                 <td><span name="pwdConnect" id=""></span></td>
             </tr>
 
